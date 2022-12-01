@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a92a62c1-34b8-4379-83d8-b7d4bcca2939": {
+      "ProjectGuid": "a92a62c1-34b8-4379-83d8-b7d4bcca2939",
+      "DisplayName": "2022_AdventOfCode",
+      "ColorIndex": 0
+    },
+    "176039ec-85a0-4593-b2a1-c3a9065ee932": {
+      "ProjectGuid": "176039ec-85a0-4593-b2a1-c3a9065ee932",
+      "DisplayName": "01",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
