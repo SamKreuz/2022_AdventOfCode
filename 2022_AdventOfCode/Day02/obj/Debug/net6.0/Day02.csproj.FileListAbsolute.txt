@@ -1,0 +1,15 @@
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\bin\Debug\net6.0\Day02.exe
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\bin\Debug\net6.0\Day02.deps.json
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\bin\Debug\net6.0\Day02.runtimeconfig.json
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\bin\Debug\net6.0\Day02.dll
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\bin\Debug\net6.0\ref\Day02.dll
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\bin\Debug\net6.0\Day02.pdb
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.csproj.AssemblyReference.cache
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.AssemblyInfoInputs.cache
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.AssemblyInfo.cs
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.csproj.CoreCompileInputs.cache
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.dll
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\ref\Day02.dll
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.pdb
+C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day02\obj\Debug\net6.0\Day02.genruntimeconfig.cache
