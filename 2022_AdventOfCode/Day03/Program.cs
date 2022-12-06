@@ -4,7 +4,7 @@ string path = "../../../input/input.txt";
 string[]? dataLines = File.ReadAllLines(path);
 
 int resultPartOne = 0;
-int resultPartTwo= 0;
+int resultPartTwo = 0;
 
 foreach (string line in dataLines)
 {
