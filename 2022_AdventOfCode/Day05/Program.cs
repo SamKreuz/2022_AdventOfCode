@@ -1,14 +1,13 @@
 ﻿//Part 01: ca. 2h
 
 using System.Text;
-using System.Text.RegularExpressions;
 
 string path = "../../../input/input.txt";
 string[]? allLines = File.ReadAllLines(path);
 int verticalIndexOfNumeration = 8;
 
 
-int numbersOfColumns;
+int numbersOfColumns = 0;
 
 Dictionary<int, Stack<char>>? stacks = SetupData(verticalIndexOfNumeration);
 
@@ -18,9 +17,9 @@ for(int i = commandDataStartIndex; i < allLines.Length; i++)
     string currentLine = allLines[i];
     string[]? splitString = currentLine.Split(' ');
 
-    int elementsToMoveNum = Convert.ToInt32(splitString[1]);
-    int fromStack = Convert.ToInt32(splitString[3]);
-    int toStack = Convert.ToInt32(splitString[5]);
+    int elementsToMoveNum = int.Parse(splitString[1]);
+    int fromStack = int.Parse(splitString[3]);
+    int toStack = int.Parse(splitString[5]);
 
     // Part 01:
     //for(int j = 0; j < elementsToMove; j++)
@@ -38,7 +37,6 @@ Console.WriteLine("Result: " + result);
 
 void MoveStackElement(int fromStack, int toStack)
 {
-    // TODO SK: check if not empty
     Stack<char>? currentFromStack = stacks[fromStack];
     char character = currentFromStack.Pop();
 
