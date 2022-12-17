@@ -1,4 +1,4 @@
-﻿//Part 1: 13:10-14:10
+﻿//Part 1: 1h, Part 2: 1,5h
 string path = "../../../input/input.txt";
 var lines = File.ReadAllLines(path);
 
@@ -22,64 +22,87 @@ foreach(var line in lines)
 
     for (int i = 0; i < moveTimes; i++)
     {
-        if (splitLine[0] == "R")
-            posHead = UpdatePositions(MovinDirection.Right, posHead);
-        else if (splitLine[0] == "L")
-            posHead = UpdatePositions(MovinDirection.Left, posHead);
-        else if (splitLine[0] == "U")
-            posHead = UpdatePositions(MovinDirection.Up, posHead);
-        else if (splitLine[0] == "D")
-            posHead = UpdatePositions(MovinDirection.Down, posHead);
-
-        var result = GetDirectionToMove();
-        posTail = UpdatePositions(result, posTail);
-
-        if (!positionsList.Contains(posTail))
+        switch (splitLine[0])
         {
-            positionsList.Add(posTail);
+            case "R":
+                posHead = UpdatePositions(MovinDirection.Right, posHead);
+                break;
+            case "L":
+                posHead = UpdatePositions(MovinDirection.Left, posHead);
+                break;
+            case "U":
+                posHead = UpdatePositions(MovinDirection.Up, posHead);
+                break;
+            case "D":
+                posHead = UpdatePositions(MovinDirection.Down, posHead);
+                break;
         }
+        
+        for(int j = 0; j < posTails.Count; j++)
+        {
+            if(j == 0)
+            {
+                var direction = GetDirectionToMove(posHead, posTails[j]);
+                posTails[j] = UpdatePositions(direction, posTails[j]);
+            }
+            else
+            {
+                var direction = GetDirectionToMove(posTails[j-1], posTails[j]);
+                posTails[j] = UpdatePositions(direction, posTails[j]);
+            }
+
+            if(j == posTails.Count - 1)
+            {
+                if (!positionsList.Contains(posTails[j]))
+                {
+                    positionsList.Add(posTails[j]);
+                }
+            }
+        }
+        //var result = GetDirectionToMove();
+        //posTail = UpdatePositions(result, posTail);
     }
 }
 
 Console.WriteLine(positionsList.Count());
 
-(int x, int y) UpdatePositions(MovinDirection direction, (int x, int y) end)
+(int x, int y) UpdatePositions(MovinDirection direction, (int x, int y) knot)
 {
     switch (direction)
     {
         case MovinDirection.Right:
-            end.x += 1;
+            knot.x += 1;
             break;
         case MovinDirection.Left:
-            end.x -= 1;
+            knot.x -= 1;
             break;
         case MovinDirection.Up:
-            end.y += 1;
+            knot.y += 1;
             break;
         case MovinDirection.Down:
-            end.y -= 1;
+            knot.y -= 1;
             break;
         case MovinDirection.RightUp:
-            end.x += 1;
-            end.y += 1;
+            knot.x += 1;
+            knot.y += 1;
             break;
         case MovinDirection.RightDown:
-            end.x += 1;
-            end.y -= 1;
+            knot.x += 1;
+            knot.y -= 1;
             break;
         case MovinDirection.LeftUp:
-            end.x -= 1;
-            end.y += 1;
+            knot.x -= 1;
+            knot.y += 1;
             break;
         case MovinDirection.LeftDown:
-            end.x -= 1;
-            end.y -= 1;
+            knot.x -= 1;
+            knot.y -= 1;
             break;
     }
-    return end;
+    return knot;
 }
 
-MovinDirection GetDirectionToMove()
+MovinDirection GetDirectionToMove((int x, int y) posHead, (int x, int y) posTail)
 {
     if(posTail.x == posHead.x 
         && posTail.y + 2 == posHead.y)
@@ -103,25 +126,29 @@ MovinDirection GetDirectionToMove()
     }
 
     if(posTail.x + 2 == posHead.x && posTail.y + 1 == posHead.y 
-        || posTail.x + 1 == posHead.x && posTail.y + 2 == posHead.y)
+        || posTail.x + 1 == posHead.x && posTail.y + 2 == posHead.y
+        || posTail.x + 2 == posHead.x && posTail.y + 2 == posHead.y)
     {
         return MovinDirection.RightUp;
     }
 
     if (posTail.x - 2 == posHead.x && posTail.y + 1 == posHead.y
-    || posTail.x - 1 == posHead.x && posTail.y + 2 == posHead.y)
+    || posTail.x - 1 == posHead.x && posTail.y + 2 == posHead.y
+    || posTail.x - 2 == posHead.x && posTail.y + 2 == posHead.y)
     {
         return MovinDirection.LeftUp;
     }
 
     if (posTail.x - 2 == posHead.x && posTail.y - 1 == posHead.y
-    || posTail.x - 1 == posHead.x && posTail.y - 2 == posHead.y)
+    || posTail.x - 1 == posHead.x && posTail.y - 2 == posHead.y
+    || posTail.x - 2 == posHead.x && posTail.y - 2 == posHead.y)
     {
         return MovinDirection.LeftDown;
     }
 
     if (posTail.x + 2 == posHead.x && posTail.y - 1 == posHead.y
-    || posTail.x + 1 == posHead.x && posTail.y - 2 == posHead.y)
+    || posTail.x + 1 == posHead.x && posTail.y - 2 == posHead.y
+    || posTail.x + 2 == posHead.x && posTail.y - 2 == posHead.y)
     {
         return MovinDirection.RightDown;
     }
