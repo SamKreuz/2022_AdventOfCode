@@ -24,7 +24,6 @@ foreach (var line in lines)
                 int.TryParse(splitLine[1], out int value);
                 registerX += value;
             }
-
         }
     }
     else if (splitLine[0] == "noop")
