@@ -12,4 +12,3 @@ C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day05\obj\Debug\ne
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day05\obj\Debug\net6.0\ref\Day05.dll
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day05\obj\Debug\net6.0\Day05.pdb
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day05\obj\Debug\net6.0\Day05.genruntimeconfig.cache
-C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day05\obj\Debug\net6.0\Day05.csproj.AssemblyReference.cache

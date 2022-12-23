@@ -4,7 +4,6 @@ C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\bin\Debug\ne
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\bin\Debug\net6.0\Day01.dll
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\bin\Debug\net6.0\ref\Day01.dll
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\bin\Debug\net6.0\Day01.pdb
-C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\obj\Debug\net6.0\Day01.csproj.AssemblyReference.cache
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\obj\Debug\net6.0\Day01.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\obj\Debug\net6.0\Day01.AssemblyInfoInputs.cache
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day01\obj\Debug\net6.0\Day01.AssemblyInfo.cs

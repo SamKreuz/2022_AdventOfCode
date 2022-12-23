@@ -1,4 +1,3 @@
-C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day03\obj\Debug\net6.0\Day03.csproj.AssemblyReference.cache
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day03\obj\Debug\net6.0\Day03.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day03\obj\Debug\net6.0\Day03.AssemblyInfoInputs.cache
 C:\Users\Sam\source\repos\2022_AdventOfCode\2022_AdventOfCode\Day03\obj\Debug\net6.0\Day03.AssemblyInfo.cs
