@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Day11
+﻿namespace Day11
 {
     internal class Monkey
     {
         public int MonkeyNumber { get; }
         //private List<int> startingItems;
-        public Queue<int> itemsQueue = new Queue<int>();
+        public Queue<ulong> itemsQueue = new Queue<ulong>();
         private string operationLine;
-        public int DivisableNumber { get; }
+        public int DivisibleNumber { get; }
         public int MonkeyTrueNumber { get; }
         public int MonkeyFalseNumber { get; }
         public int InspectedItems { get; set; } = 0;
@@ -23,28 +17,28 @@ namespace Day11
             //itemsQueue = SetStartingItemsList(startingItemsLine);
             SetStartingItemsList(startingItemsLine);
             operationLine = operationLineString;
-            DivisableNumber = GetLastNumber(divisableNumLine).Value;
+            DivisibleNumber = GetLastNumber(divisableNumLine).Value;
             MonkeyTrueNumber = (int)GetLastNumber(throwMonkeyTrueLine).Value;
             MonkeyFalseNumber = (int)GetLastNumber(throwMonkeyFalseLine).Value;
         }
 
         private void SetStartingItemsList(string startingItemsLine)
         {
-            List<int>? startingItems = startingItemsLine.Remove(0, 17)
+            List<ulong>? startingItems = startingItemsLine.Remove(0, 17)
                                                         .Split(',', StringSplitOptions.TrimEntries)
-                                                        .Select(int.Parse)
+                                                        .Select(ulong.Parse)
                                                         .ToList();
 
             startingItems.ForEach(x => itemsQueue.Enqueue(x));
         }
 
-        public int RunOperation(int valueOne)
+        public ulong RunOperation(ulong valueOne)
         {
             string[]? splitString = operationLine.Trim().Split(' ');
             string? operatorString = splitString[4];
             string? valueTwoString = splitString[5];
 
-            int valueTwo;
+            ulong valueTwo;
 
             if (valueTwoString == "old")
             {
@@ -52,7 +46,7 @@ namespace Day11
             }
             else
             {
-                valueTwo = int.Parse(valueTwoString);
+                valueTwo = ulong.Parse(valueTwoString);
             }
 
             if (operatorString == "*")
@@ -80,9 +74,9 @@ namespace Day11
             return null;
         }
 
-        public int GetNewItem()
+        public ulong GetNewItem()
         {
-            int item = itemsQueue.Dequeue();
+            ulong item = itemsQueue.Dequeue();
             InspectedItems++;
             return item;
         }
