@@ -8,22 +8,37 @@ namespace Day11
 {
     internal class Monkey
     {
-        private List<int> startingItems;
+        public int MonkeyNumber { get; }
+        //private List<int> startingItems;
+        public Queue<int> itemsQueue = new Queue<int>();
         private string operationLine;
+        public int DivisableNumber { get; }
+        public int MonkeyTrueNumber { get; }
+        public int MonkeyFalseNumber { get; }
+        public int InspectedItems { get; set; } = 0;
 
-
-        public Monkey(string startingItemsLine, string operationLine, int dividableNum = 0, int throwMonkeyTrue = 0, int throwMonkeyFalse = 0)
+        public Monkey(string monkeyNumberLine, string startingItemsLine, string operationLineString, string divisableNumLine, string throwMonkeyTrueLine, string throwMonkeyFalseLine)
         {
+            MonkeyNumber = int.Parse(monkeyNumberLine[7].ToString());
+            //itemsQueue = SetStartingItemsList(startingItemsLine);
             SetStartingItemsList(startingItemsLine);
-            operationLine = operationLine;
+            operationLine = operationLineString;
+            DivisableNumber = GetLastNumber(divisableNumLine).Value;
+            MonkeyTrueNumber = (int)GetLastNumber(throwMonkeyTrueLine).Value;
+            MonkeyFalseNumber = (int)GetLastNumber(throwMonkeyFalseLine).Value;
         }
 
         private void SetStartingItemsList(string startingItemsLine)
         {
-            var startingItems = startingItemsLine.Remove(0, 17).Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
+            List<int>? startingItems = startingItemsLine.Remove(0, 17)
+                                                        .Split(',', StringSplitOptions.TrimEntries)
+                                                        .Select(int.Parse)
+                                                        .ToList();
+
+            startingItems.ForEach(x => itemsQueue.Enqueue(x));
         }
 
-        private int? RunOperation(int valueOne)
+        public int RunOperation(int valueOne)
         {
             string[]? splitString = operationLine.Trim().Split(' ');
             string? operatorString = splitString[4];
@@ -31,7 +46,7 @@ namespace Day11
 
             int valueTwo;
 
-            if(valueTwoString == "old")
+            if (valueTwoString == "old")
             {
                 valueTwo = valueOne;
             }
@@ -40,15 +55,36 @@ namespace Day11
                 valueTwo = int.Parse(valueTwoString);
             }
 
-            if(operatorString == "*")
+            if (operatorString == "*")
             {
                 return valueOne * valueTwo;
             }
-            else if(operatorString == "+")
+            else if (operatorString == "+")
             {
                 return valueOne + valueTwo;
             }
+
+            throw new NotImplementedException();
+            return 0;
+        }
+
+        private int? GetLastNumber(string divisableNumLine)
+        {
+            var lastString = divisableNumLine.Split(' ').Last();
+
+            int.TryParse(lastString, out int result);
+            if (result != null)
+            {
+                return result;
+            }
             return null;
+        }
+
+        public int GetNewItem()
+        {
+            int item = itemsQueue.Dequeue();
+            InspectedItems++;
+            return item;
         }
 
     }
